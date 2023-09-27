@@ -10,8 +10,8 @@ pipeline {
 
     NEXUS_USUARIO="admin"
     NEXUS_CONTRASENA="admin"
-    NEXUS_URL="192.168.0.86:8081"
-    NEXUS_URL_PUSH="192.168.0.86:8081"
+    NEXUS_URL="192.168.0.86:8083"
+    NEXUS_URL_PUSH="192.168.0.86:8083"
 
   }
    stages {
@@ -40,9 +40,8 @@ pipeline {
    stage('Deploy Image') {
       steps{
         sh '''
-        
-        docker tag testapp $NEXUS_URL_PUSH/mguazzardo/testapp
-        docker push $NEXUS_URL_PUSH/mguazzardo/testapp   
+        docker tag testapp $NEXUS_URL_PUSH/mirepo
+        docker push $NEXUS_URL_PUSH/mirepo 
         '''
         }
       }
