@@ -1,12 +1,12 @@
 pipeline {
-  agent any
+  agent docker
 
   options {
     timeout(time: 2, unit: 'MINUTES')
   }
 
   environment {
-    ARTIFACT_ID = "elbuo8/webapp:${env.BUILD_NUMBER}"
+    //ARTIFACT_ID = "elbuo8/webapp:${env.BUILD_NUMBER}"
   }
    stages {
    stage('Building image') {
