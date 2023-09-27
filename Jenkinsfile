@@ -37,7 +37,7 @@ pipeline {
       steps{
         sh '''
         
-        docker tag mirepo $NEXUS_URL_PUSH/mguazzardo/testapp
+        docker tag testapp $NEXUS_URL_PUSH/mguazzardo/testapp
         docker push $NEXUS_URL_PUSH/mguazzardo/testapp   
         '''
         }
