@@ -11,7 +11,7 @@ pipeline {
     NEXUS_USUARIO="admin"
     NEXUS_CONTRASENA="admin"
     NEXUS_URL="192.168.0.86:8081"
-    NEXUS_URL_PUSH="192.168.0.86:8083"
+    NEXUS_URL_PUSH="192.168.0.86:8081"
 
   }
    stages {
@@ -33,6 +33,10 @@ pipeline {
       }
     }
    /*docker login -u $NEXUS_USUARIO -p $NEXUS_CONTRASENA  $NEXUS_URL*/
+   /*
+      docker tag testapp 127.0.0.1:5000/mguazzardo/testapp
+      docker push 127.0.0.1:5000/mguazzardo/testapp
+   */
    stage('Deploy Image') {
       steps{
         sh '''
