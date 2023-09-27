@@ -5,9 +5,9 @@ pipeline {
     timeout(time: 2, unit: 'MINUTES')
   }
 
-  environment {
+  //environment {
    // ARTIFACT_ID = "elbuo8/webapp:${env.BUILD_NUMBER}"
-  }
+  //}
    stages {
    stage('Building image') {
       steps{
