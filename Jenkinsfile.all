@@ -31,8 +31,10 @@ pipeline {
         '''
         }
       }
+   }
+}
   
-
+/*
     stage('Pass To K8s'){
         steps {
         sh '''
@@ -48,7 +50,4 @@ pipeline {
             }
         }
 	
-
-
-    }
-}
+*/  
