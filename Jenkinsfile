@@ -40,8 +40,10 @@ pipeline {
    stage('Deploy Image') {
       steps{
         sh '''
-        docker tag testapp:mirepo $NEXUS_URL_PUSH:mirepo
-        docker push $NEXUS_URL_PUSH:mirepo 
+          docker run --rm -d -p 5000:5000 --name dockerregistry registry:latest
+          docker tag testapp 127.0.0.1:5000/mguazzardo/testapp
+          docker push 127.0.0.1:5000/mguazzardo/testappdocker
+          docker stop dockerregistry
         '''
         }
       }
