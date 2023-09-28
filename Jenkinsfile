@@ -40,8 +40,8 @@ pipeline {
    stage('Deploy Image') {
       steps{
         sh '''
-        docker tag testapp $NEXUS_URL_PUSH/mirepo
-        docker push $NEXUS_URL_PUSH/mirepo 
+        docker tag testapp:mirepo $NEXUS_URL_PUSH:mirepo
+        docker push $NEXUS_URL_PUSH:mirepo 
         '''
         }
       }
